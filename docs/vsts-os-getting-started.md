@@ -41,7 +41,7 @@ Provides complete deployment plan execution details, gathered directly from Outs
 
 ### Quick steps to get started ###
 
-![](/images/doc-vsts-install.png)
+![](/vsts/docs/images/doc-vsts-install.png)
 
 To make the OutSystems Release Task available, you must:
 - Install the **'Outsystems Integration'** in your Team Services subscription or your Team Foundation Server deployment.

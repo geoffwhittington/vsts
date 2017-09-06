@@ -32,44 +32,48 @@ export class TaskOptions {
 
     constructor() {
 
-        this.osServerEndpoint = tl.getInput('outsystemsServiceEndpoint', true);
-        this.osServerEndpointUrl = url.resolve(tl.getEndpointUrl(this.osServerEndpoint, true), 'lifetimeapi/rest/v1');
-        //this.osServerEndpointAuth = tl.getEndpointAuthorization(this.osServerEndpoint, false);
+        this.osServerEndpoint = '';
+        this.osServerEndpointUrl = '<endpoint url>';
 
-        this.osApplication = tl.getInput('outsystemsApplication', true);
-        this.osTagAndDeploy = util.ConvertToBoolean(tl.getInput('outsystemsTagAndDeploy', true));
-        this.osAppVersion = tl.getInput('outsystemsAppVersionName', false);
-        this.osExistingAppVersion = tl.getInput('outsystemsExistingAppVersion', false);
+        // this.osApplication = 'ffc7e96f-f0d7-4803-bf77-e348a6596ba8'; //X01Darts
+        this.osApplication = 'fbc16570-8002-4a25-aabc-b647cb0d256a'; //X0MDarts
+        // this.osApplication = 'ffc7e96f-f0d7-4803-bf77-e348a6596ba8,fbc16570-8002-4a25-aabc-b647cb0d256a'; //X01Darts & X0MDarts
 
-        this.osChangeLog = tl.getInput('outsystemsDeployPlanChangeLog', this.osTagAndDeploy);
+        this.osTagAndDeploy = false;
+        this.osAutomaticVersioning = true;
 
-        this.osNotes = tl.getInput('outsystemsDeployNotes', false);
-        this.osSource = tl.getInput('outsystemsSourceEnvironment', true);
-        this.osTarget = tl.getInput('outsystemsTargetEnvironment', true);
-        //mandatory para multi apps
-        this.osAutomaticVersioning = util.ConvertToBoolean(tl.getInput('outsystemsAutomaticVersioning', true));
+        this.osAppVersion = '0.5.42';
+        this.osExistingAppVersion = '';
 
-        let resultsDirectory: string = tl.getVariable('Build.StagingDirectory');
-        if (!resultsDirectory) {
-            // 'System.DefaultWorkingDirectory' is available during build and release
-            resultsDirectory = tl.getVariable('System.DefaultWorkingDirectory');
-        }
+        this.osChangeLog = `OS App Change log from test: ${new Date().toUTCString()}`;
+        this.osNotes = `OS App Deploy Notes from test: ${new Date().toUTCString()}`;
 
-        this.saveResultsTo = path.join(resultsDirectory, 'outsystemsResults');
+        // this.osSource = '6edd0422-74c7-4fe9-bd2a-b3eb1ae30cba'; //Dev
+        // this.osTarget = '6eac907e-f9ad-48c6-994d-7acda431aa3c'; //Test
 
-        this.strictSSL = ('true' !== tl.getEndpointDataParameter(this.osServerEndpoint, 'acceptUntrustedCerts', true));
+        this.osSource = '6eac907e-f9ad-48c6-994d-7acda431aa3c'; //Test
+        this.osTarget = 'd690b43e-f77a-48bf-a610-fdb7ac3fc062'; //Prod
+
+        // let resultsDirectory: string = tl.getVariable('Build.StagingDirectory');
+        // if (!resultsDirectory) {
+        //     // 'System.DefaultWorkingDirectory' is available during build and release
+        //     resultsDirectory = tl.getVariable('System.DefaultWorkingDirectory');
+        // }
+
+        // this.saveResultsTo = path.join(resultsDirectory, 'outsystemsResults');
+
+        this.strictSSL = false;
         tl.debug('strictSSL=' + this.strictSSL);
     }
 }
 
 async function doWork() {
     try {
-        tl.setResourcePath(path.join(__dirname, 'task.json'));
+//        tl.setResourcePath(path.join(__dirname, 'task.json'));
 
         const taskOptions: TaskOptions = new TaskOptions();
         const lifetime = new ltclt.V1Api(taskOptions.osServerEndpointUrl, taskOptions.strictSSL);
-        const ltTokenApi = tl.getEndpointAuthorizationParameter(taskOptions.osServerEndpoint, 'apitoken', true);
-        lifetime.setApiKey(ltclt.V1ApiApiKeys.os_auth, ltTokenApi);
+        lifetime.setApiKey(ltclt.V1ApiApiKeys.os_auth, '<apittoken>');
 
         const curTask: OsDeploy = new OsDeploy(taskOptions, lifetime);
         await curTask.start();
