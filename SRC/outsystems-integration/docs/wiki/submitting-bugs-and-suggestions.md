@@ -1,5 +1,5 @@
 # Submitting Bugs and Suggestions
-The VS Code project tracks issues and feature requests using the [GitHub issue tracker](https://github.com/OutSystems/vsts/issues) for the `vsts-outsystems` repository. 
+The 'Outsystems Integration' project tracks issues and feature requests using the [GitHub issue tracker](https://github.com/OutSystems/vsts/issues) for the `vsts-outsystems` repository. 
 
 
 ### Before Submitting an Issue
@@ -10,8 +10,6 @@ If you find your issue already exists, make relevant comments and add your [reac
 👍 - upvote
 
 👎 - downvote
-
-The VS Code project is distributed across multiple repositories, try to file the issue against the correct repository [Related Projects](https://github.com/OutSystems/vsts/wiki/Related-Projects).
 
 If your issue is a question then please ask the question on [Stack Overflow](https://stackoverflow.com/questions/tagged/vsts-outsystems) using the tag `vsts-outsystems`.
 
@@ -28,10 +26,8 @@ The more information you can provide, the more likely someone will be successful
 
 Please include the following with each issue. 
 
-* Version of VS Code
-* List of extensions that you have installed. 
-
-> **Tip:** You can easily add the list of extensions by creating the issue using `Report Issues` from VS Code's Help menu. 
+* Version of 'Outsystems Integration'
+* Log from the extension execution, and if possible logs/screenshots from Outsystems Lifetime platform
 
 * Reproducible steps (1... 2... 3...) and what you expected versus what you actually saw. 
 * Images, animations, or a link to a video. Note that images and animations illustrate repro-steps but *do not* replace them.
@@ -39,12 +35,9 @@ Please include the following with each issue.
 
 > **Note:** Because we need to copy and paste the code snippet, including a code snippet as a media file (i.e. .gif) is not sufficient. 
 
-* Errors in the Dev Tools Console (Help | Toggle Developer Tools)
-
 Please remember to do the following:
 
 * Search the issue repository to see if there exists a duplicate. 
-* Recreate the issue after disabling all extensions (see the [docs for how to do this](https://code.visualstudio.com/docs/editor/extension-gallery#_disable-an-extension)). If you find the issue is caused by an extension you have installed please file an issue on the extension respectively. 
 * Simplify your code around the issue so we can better isolate the problem. 
 
 Don't feel bad if we can't reproduce the issue and ask for more information!

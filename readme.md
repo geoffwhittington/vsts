@@ -21,8 +21,7 @@ The [`Outsystems Extension`](https://github.com/OutSystems/vsts) repository is w
 If you are interested in fixing issues and contributing directly to the code base,
 please see the document [How to Contribute](https://github.com/OutSystems/vsts/wiki/How-to-Contribute), which covers the following:
 
-* [How to build and run from source](https://github.com/OutSystems/vsts/wiki/How-to-Contribute#build-and-run-from-source)
-* [The development workflow, including debugging](https://github.com/OutSystems/vsts/wiki/How-to-Contribute#development-workflow)
+* [The development workflow, including debugging](https://github.com/OutSystems/vsts/wiki/How-to-Contribute)
 * [Coding Guidelines](https://github.com/OutSystems/vsts/wiki/Coding-Guidelines)
 * [Submitting pull requests](https://github.com/OutSystems/vsts/wiki/How-to-Contribute#pull-requests)
 

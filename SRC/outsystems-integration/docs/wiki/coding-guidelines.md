@@ -3,11 +3,7 @@
 
 ## Git
 
-We prefer a **rebase workflow** and occasional **feature branches**. Most work happens directly on the `master` branch. For that reason, we recommend setting the `pull.rebase` setting to true.
-
-```bash
-git config --global pull.rebase true
-```
+We prefer a **feature branches** for development team. For contributors we encourage to fork the repo and make pull requests. 
 
 ## Indentation
 We use tabs, not spaces.
@@ -24,7 +20,7 @@ We use tabs, not spaces.
 * Do not introduce new `types` or `values` to the global namespace
 
 ## Comments
-* Use JSDoc style comments for `functions`, `interfaces`, `enums`, and `classes`
+* Use [JSDoc](http://usejsdoc.org/about-getting-started.html) style comments for `functions`, `interfaces`, `enums`, and `classes`
 
 ## Strings
 * Use "double quotes" for strings shown to the user that need to be externalized (localized)
@@ -33,20 +29,5 @@ We use tabs, not spaces.
 
 ## Style
 * Use arrow functions `=>` over anonymous function expressions
-* Only surround arrow function parameters when necessary. For example, `(x) => x + x` is wrong but the following are correct:
-
-```javascript
-x => x + x
-(x,y) => x + y
-<T>(x: T, y: T) => x === y
-```
-
 * Always surround loop and conditional bodies with curly braces
 * Open curly braces always go on the same line as whatever necessitates them
-* Parenthesized constructs should have no surrounding whitespace. A single space follows commas, colons, and semicolons in those constructs. For example:
-
-```javascript
-for (var i = 0, n = str.length; i < 10; i++) { }
-if (x < 10) { }
-function f(x: number, y: string): void { }
-```

@@ -2,22 +2,11 @@
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
 Do Not Translate or Localize
 
-//TODO:ADD-3RD-PARTY-NOTICES-HERE
-
-
 ---------------------------------------- START OF THIRD PARTY NOTICE -----------------------------------------
 
 Outsystems logo
 
-
-
-These images are also available in various sizes and SVG formats online, or as a zip file, https://www.outsystems.com/Logos
-
-These are licensed under the <license name>, <license url>
-
-Under the terms of this license, you must include an attribution to the Jenkins project, with a link (https://www.outsystems.com), if you display these logos or derivates thereof.
-
-
+These images are also available in various sizes and SVG formats online, or as a zip file, https://github.com/OutSystems/vsts/tree/master/PR/branding
 
 Credits
 

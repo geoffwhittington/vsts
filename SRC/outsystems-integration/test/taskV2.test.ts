@@ -74,7 +74,7 @@ async function doWork() {
         const taskOptions: TaskOptions = new TaskOptions();
         const lifetime = new ltclt.V1Api(taskOptions.osServerEndpointUrl, taskOptions.strictSSL);
         // tslint:disable-next-line:max-line-length
-        lifetime.setApiKey(ltclt.V1ApiApiKeys.os_auth, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsaWZldGltZSIsInN1YiI6IllUWTFPVGs1T0RFdE5XWmtOUzAwWW1aa0xXSmhPR1F0TnpNd01EQmxaRFF5TXpsaCIsImF1ZCI6ImxpZmV0aW1lIiwiaWF0IjoiMTQ5NzIyMzc5OSIsImppdCI6InlNZkhaZnVMOHkifQ==.dmMX09hcZh3Hqa3oHFpFoZ9AZU2VjK35XArCgCCPaZ0=');
+        lifetime.setApiKey(ltclt.V1ApiApiKeys.os_auth, <apittoken>);
 
         const curTask: OsDeploy = new OsDeploy(taskOptions, lifetime);
         await curTask.start();
