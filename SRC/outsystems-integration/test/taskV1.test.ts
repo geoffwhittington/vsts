@@ -33,7 +33,7 @@ export class TaskOptions {
     constructor() {
 
         this.osServerEndpoint = '';
-        this.osServerEndpointUrl = '<endpoint url>';
+        this.osServerEndpointUrl = '<OS Lifetime endpoint url>';
 
         // this.osApplication = 'ffc7e96f-f0d7-4803-bf77-e348a6596ba8'; //X01Darts
         this.osApplication = 'fbc16570-8002-4a25-aabc-b647cb0d256a'; //X0MDarts
@@ -73,7 +73,7 @@ async function doWork() {
 
         const taskOptions: TaskOptions = new TaskOptions();
         const lifetime = new ltclt.V1Api(taskOptions.osServerEndpointUrl, taskOptions.strictSSL);
-        lifetime.setApiKey(ltclt.V1ApiApiKeys.os_auth, '<apittoken>');
+        lifetime.setApiKey(ltclt.V1ApiApiKeys.os_auth, '<OS Lifetime apittoken>');
 
         const curTask: OsDeploy = new OsDeploy(taskOptions, lifetime);
         await curTask.start();
