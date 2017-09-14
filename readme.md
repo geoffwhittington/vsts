@@ -1,16 +1,16 @@
-# Outsystems Integration - Open Source
+# OutSystems Integration - Open Source
 
 [![Build Status](https://outsystems-partners.visualstudio.com/_apis/public/build/definitions/9c30b369-871f-48f3-8e16-7fdc63aea9cf/1/badge)](https://outsystems-partners.visualstudio.com/OutSystemsExt/_build/index?context=mine&path=%5C&definitionId=1&_a=completed)
 [![Coverage Status](https://img.shields.io/coveralls/OutSystems/vsts/master.svg)](https://coveralls.io/github/OutSystems/vsts?branch=master)
 [![Gitter](https://img.shields.io/badge/chat-on%20gitter-blue.svg)](https://gitter.im/OutSystems/vsts)
 
-[Outsystems Integration](https://marketplace.visualstudio.com/items?itemName=outsystems.OutsystemsExt) is a Visual studio extension that allows an organization to integrate typical development with Outsystems Platform. 
+[OutSystems Integration](https://marketplace.visualstudio.com/items?itemName=outsystems.OutsystemsExt) is a Visual studio extension that allows an organization to integrate typical development with OutSystems Platform. 
 
 OutSystems provides a trusted enterprise Rapid Application Development (RAD) platform allowing any enterprise to create, deploy, change, and manage custom mobile and web applications - delivered seamlessly across all devices. Available as a cloud or on-premises solution with deep integration to all existing systems and an open architecture. OutSystems manages the complete application lifecycle of large portfolios.
 
-These extension is compatible with Outsystems 10 and higher.
+These extension is compatible with OutSystems 10 and higher.
 
-The [`Outsystems Extension`](https://github.com/OutSystems/vsts) repository is where we do development and there are many ways you can participate in the project, for example:
+The [`OutSystems Extension`](https://github.com/OutSystems/vsts) repository is where we do development and there are many ways you can participate in the project, for example:
 
 * [Submit bugs and feature requests](https://github.com/OutSystems/vsts/issues) and help us verify as they are checked in
 * Review [source code changes](https://github.com/OutSystems/vsts/pulls)
