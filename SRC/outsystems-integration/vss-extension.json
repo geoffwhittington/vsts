@@ -26,9 +26,14 @@
         "api-version/3.0"
     ],
     "tags": [
-        "outsystems"
+        "outsystems",
+        "release",
+        "cd",
+        "continuous integration",
+        "deploy task"
     ],
     "categories": [
+        "Build and Release", 
         "Integrate"
     ],
     "screenshots": [
