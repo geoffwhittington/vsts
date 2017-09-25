@@ -1,7 +1,7 @@
 {
   "loc.friendlyName": "OutSystems Integration",
   "loc.helpMarkDown": "This task allows you to deploy OutSystems Apps through OutSystems Lifetime. It requires a provisioned [Outsystems](https://www.outsystems.com) platform, and creating a [service endpoint](https://github.com/OutSystems/vsts/wiki/VSTS-TFS-Service-Endpoint).  [More Information](https://github.com/OutSystems/vsts/wiki/OutSystems-Release-Task).",
-  "loc.description": "Deploy OutSystems apps through you OutSystems platform",
+  "loc.description": "Deploy your Outsystems Applications with a Deployment Plan",
   "loc.instanceNameFormat": "Deploy OutSystems App(s):",
   "loc.input.help.outsystemsServiceEndpoint": "Select a OutSystems service connection.",
   "loc.input.label.outsystemsServiceEndpoint": "OutSystems Connection",
