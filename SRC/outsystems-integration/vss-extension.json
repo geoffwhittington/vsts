@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "outsystems-integration",
-    "version": "1.0.21.0",
+    "version": "1.0.22.0",
     "name": "OutSystems VSTS Integration",
     "scopes": [],
     "description": "OutSystems Platform Integration",
@@ -55,22 +55,22 @@
     },
     "links": {
         "getstarted": {
-            "uri": "https://github.com/Microsoft/vsts-tasks/tree/master/Tasks"
+            "uri": "https://github.com/OutSystems/vsts/wiki/Getting-Started"
         },
         "support": {
-            "uri": "https://github.com/Microsoft/vsts-tasks/tree/master/Tasks"
+            "uri": "https://gitter.im/OutSystems/vsts"
         },
         "issues": {
-            "uri": "https://github.com/Microsoft/vsts-tasks/tree/master/Tasks"
+            "uri": "https://github.com/OutSystems/vsts/issues"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/Microsoft/vsts-tasks/tree/master/Tasks"
+        "uri": "https://github.com/OutSystems/vsts"
     },
     "branding": {
-        "color": "rgb(255, 36, 0)",
-        "theme": "dark"
+        "color": "rgb(255, 255, 255)",
+        "theme": "light"
     },
     "contributions": [
         {
