@@ -12,7 +12,7 @@ This extension focuses on:
 
 ### Quick steps to get started ###
 
-![](/static/images/Screen1.png)
+![](/static/images/outsystems-release-task.png)
 
 To make the OutSystems Relese Task available, you must:
 - Configure a service end-point in VSTS/TFS for accessing the OutSystems platform;
