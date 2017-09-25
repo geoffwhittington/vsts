@@ -9,6 +9,11 @@
     "galleryFlags": [
         "Preview"
     ],
+    "galleryProperties": [
+        {
+            "markdownItParser": "true"   
+        }
+    ],
     "files": [
         {
             "path": "outsystems-task"
