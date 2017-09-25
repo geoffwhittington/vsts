@@ -1,18 +1,13 @@
 {
     "manifestVersion": 1,
     "id": "outsystems-integration",
-    "version": "1.0.22.0",
+    "version": "1.0.23",
     "name": "OutSystems VSTS Integration",
     "scopes": [],
     "description": "OutSystems Platform Integration",
     "publisher": "joalmeidg",
     "galleryFlags": [
         "Preview"
-    ],
-    "galleryProperties": [
-        {
-            "markdownItParser": "true"   
-        }
     ],
     "files": [
         {
