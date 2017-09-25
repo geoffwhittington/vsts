@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "description": "Simplify the creation and maintenance of your DevOps cycle with the OutSystems VSTS Extension.",
   "main": "gulpfile.js",
-  "galleryBanner.color": "FF2400",
   "directories": {
     "doc": "docs"
   },
