@@ -19,8 +19,10 @@ To make the OutSystems Relese Task available, you must:
 - Use the OutSystems Release Task in your release configuration.
 
 Please refer to the following information:
-- [Walkthrough to setup the VSTS extension](https://github.com/Microsoft/vsts-tasks/tree/master/Tasks)
-- [OutSystems Lifetime API to understand deployment in OutSystems](https://success.outsystems.com/Documentation/10/Reference/OutSystems_APIs/LifeTime_Deployment_API)
+- [Getting Started](https://github.com/OutSystems/vsts/wiki/Getting-Started)
+- [VSTS/TFS Service Endpoint](https://github.com/OutSystems/vsts/wiki/VSTS-TFS-Service-Endpoint)
+- [OutSystems Release Task](https://github.com/OutSystems/vsts/wiki/OutSystems-Release-Task)
+- [Wiki](https://github.com/OutSystems/vsts/wiki)
 
 ### Requirements
 
@@ -29,4 +31,4 @@ Please refer to the following information:
 
 ### Learn more ###
 
-The source to this extension is available [here](https://github.com/Microsoft/vsts-tasks/tree/master/Tasks). Feel free to take, fork or extend.
+The source to this extension is available [here](https://github.com/OutSystems/vsts). Feel free to take, fork or extend.

@@ -147,7 +147,7 @@
                         "type": "ms.vss-endpoint.endpoint-auth-scheme-token"
                     }
                 ],
-                "helpMarkDown": "<a href=\"https://aka.ms/outsystems\" target=\"_blank\"><b>Learn More</b></a>"
+                "helpMarkDown": "<a href=\"https://github.com/OutSystems/vsts/wiki/Getting-Started\" target=\"_blank\"><b>Learn More</b></a>"
             }
         }
    ]

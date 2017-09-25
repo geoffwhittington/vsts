@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://outsystems-partners.visualstudio.com/OutSystemsExt"
+    "url": "https://github.com/OutSystems/vsts"
   },
-  "author": "João Almeida",
+  "author": "Outsystems",
   "license": "MIT",
   "bugs": {
-    "url": "https://outsystems-partners.visualstudio.com/OutSystemsExt/docs"
+    "url": "https://github.com/OutSystems/vsts/wiki"
   },
-  "homepage": "http://aka.ms/outsystems",
+  "homepage": "https://github.com/OutSystems/vsts",
   "dependencies": {
     "@types/async-polling": "0.0.2",
     "@types/bluebird": "^3.5.8",

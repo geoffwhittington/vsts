@@ -3,12 +3,12 @@
     "name": "outsystems-task",
     "friendlyName": "Outsystems Release Task",
     "description": "Deploy your Outsystems Applications with a Deployment Plan",
-    "helpMarkDown": "[More Information](https://aka.ms/outsystems)",
+    "helpMarkDown": "[More Information](https://github.com/OutSystems/vsts/wiki/Getting-Started)",
     "category": "Deploy",
     "visibility": [
         "Release"
     ],
-    "author": "João Almeida",
+    "author": "Outsystems",
     "version": {
         "Major": 1,
         "Minor": 1,
@@ -31,7 +31,7 @@
             "label": "Application",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Select the Outsystems application to deploy. [Learn more.](https://aka.ms/outsystems)",
+            "helpMarkDown": "Select the Outsystems application to deploy. [Learn more.](https://github.com/OutSystems/vsts/wiki/Getting-Started)",
             "properties": {
                 "DisableManageLink": "True",
                 "EditableOptions": "false",
