@@ -16,7 +16,7 @@ This extension focuses on:
 
 To make the OutSystems Relese Task available, you must:
 - Configure a service end-point in VSTS/TFS for accessing the OutSystems platform;
-- Use the OutSystems Release Task in your release configuration.
+- Use the OutSystems Release Task in your release definition.
 
 Please refer to the following information:
 - [Getting Started](https://github.com/OutSystems/vsts/wiki/Getting-Started)

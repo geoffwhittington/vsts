@@ -36,13 +36,13 @@
             "path": "static/images/outsystems-release-task-catalog.png"
         },
         {
-            "path": "static/images/outsystems-release-task-ui.png"
-        },
-        {
             "path": "static/images/outsystems-release-task-ui-detail.png"
         },
         {
-            "path": "static/images/outsystems-service-endpoint-fullscreen.png"
+            "path": "static/images/outsystems-release-task-ui.png"
+        },
+        {
+            "path": "static/images/outsystems-service-endpoint.png"
         }
     ],
     "content": {
