@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "outsystems-integration",
-    "version": "1.0.25",
+    "version": "1.0.26",
     "name": "OutSystems VSTS Integration",
     "scopes": [],
     "description": "OutSystems Platform Integration",
@@ -73,7 +73,7 @@
         "uri": "https://github.com/OutSystems/vsts"
     },
     "branding": {
-        "color": "rgb(255, 255, 255)",
+        "color": "rgb(204, 34, 0)",
         "theme": "light"
     },
     "contributions": [
