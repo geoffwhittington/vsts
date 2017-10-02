@@ -12,6 +12,10 @@
     "files": [
         {
             "path": "outsystems-task"
+        },
+        {
+            "path": "static/images",
+            "addressable": true
         }
     ],
     "icons": {
@@ -154,5 +158,5 @@
                 "helpMarkDown": "<a href=\"https://github.com/OutSystems/vsts/wiki/Getting-Started\" target=\"_blank\"><b>Learn More</b></a>"
             }
         }
-   ]
+    ]
 }
