@@ -1,0 +1,16 @@
+
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+Do Not Translate or Localize
+
+---------------------------------------- START OF THIRD PARTY NOTICE -----------------------------------------
+
+Outsystems logo
+
+These images are also available in various sizes and SVG formats online, or as a zip file, https://github.com/OutSystems/vsts/tree/master/PR/branding
+
+Credits
+
+Thanks to Outsystems, namely António Barros (antonio.barros@outsystems.com), João Brandão Rodrigues (joaobrandao.rodrigues@outsystems.com), João Batista (joao.batista@outsystems.com), João Bento (joao.bento@outsystems.com) and Gonçalo Borrega (goncalo.borrega@outsystems.com) for all the technical help on Outsystems platform, branding assets and documentation!
+
+
+--------------------------------------- END OF THIRD PARTY NOTICE --------------------------------------------
