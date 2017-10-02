@@ -70,6 +70,12 @@
         },
         "issues": {
             "uri": "https://github.com/OutSystems/vsts/issues"
+        },
+        "repository": {
+            "uri": "https://github.com/OutSystems/vsts"
+        },
+        "learn": {
+            "uri": "https://github.com/OutSystems/vsts/wiki"
         }
     },
     "repository": {
