@@ -84,7 +84,7 @@
     },
     "branding": {
         "color": "rgb(204, 34, 0)",
-        "theme": "light"
+        "theme": "dark"
     },
     "contributions": [
         {
