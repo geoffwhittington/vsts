@@ -10,7 +10,9 @@ This extension focuses on:
   - Schedule automatic releases and/or request on demand;
   - An approval system for release executions.
 
-![OutSystems Release Task](/static/images/outsystems-release-task.png)
+![OutSystems Release Task](/static/images/outsystems-release-task-marketplace.png)
+
+![OutSystems Release Task](/static/images/outsystems-release-task-marketplace-detail.png)
 
 ### Quick steps to get started ###
 
