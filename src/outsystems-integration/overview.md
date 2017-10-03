@@ -10,11 +10,9 @@ This extension focuses on:
   - Schedule automatic releases and/or request on demand;
   - An approval system for release executions.
 
-### Quick steps to get started ###
-
-![](https://github.com/OutSystems/vsts/raw/master/src/outsystems-integration/static/images/outsystems-release-task.png)
-
 ![OutSystems Release Task](/static/images/outsystems-release-task.png)
+
+### Quick steps to get started ###
 
 To make the OutSystems Relese Task available, you must:
 - Configure a service end-point in VSTS/TFS for accessing the OutSystems platform;
