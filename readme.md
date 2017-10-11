@@ -1,6 +1,6 @@
 # OutSystems Integration - Open Source
 
-[![Build Status](https://outsystems-partners.visualstudio.com/_apis/public/build/definitions/9c30b369-871f-48f3-8e16-7fdc63aea9cf/1/badge)](https://outsystems-partners.visualstudio.com/OutSystemsExt/_build/index?context=mine&path=%5C&definitionId=1&_a=completed)
+[![Build Status](https://outsystems-software.visualstudio.com/_apis/public/build/definitions/7951d2b0-3197-4503-98fe-4dc41fdaca0b/3/badge)](https://outsystems-software.visualstudio.com/OSVSExtension/_build/index?context=mine&path=%5C&definitionId=3&_a=completed)
 [![Coverage Status](https://img.shields.io/coveralls/OutSystems/vsts/master.svg)](https://coveralls.io/github/OutSystems/vsts?branch=master)
 [![Gitter](https://img.shields.io/badge/chat-on%20gitter-blue.svg)](https://gitter.im/OutSystems/vsts)
 
