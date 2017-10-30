@@ -155,7 +155,8 @@
     },
     "messages": {
         "OSAppVersionAlreadyExists": "The version '%s' of application '%s' already exists. Insert a new version.",
-        "OSFailureAppNotModified": "The appication '%s' was not modified. Maybe syncronizing your environments will do.",
+        "OSFailureAppNotModified": "The applications '%s' was not modified. Maybe syncronizing your environments will do.",
+        "OSFailureAppsNotModified": "The applications '%s' were not modified. Maybe syncronizing your environments will do.",
         "OSFailureAppVersionNotFound": "The version '%s' of application '%s' was not found.",
         "OSSuccessfulDeployment":"The deployment plan execution ended with status '%s'",
         "OSFailedDeployment":"The deployment plan failed status '%s'",
