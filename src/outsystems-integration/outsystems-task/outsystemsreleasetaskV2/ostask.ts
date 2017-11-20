@@ -143,12 +143,14 @@ export class OsDeploy {
     private async GetApplication(osApplication: string): Promise<string> {
         const res: any = await this.lifetime.applicationsGet(osApplication, true, true);
         const curApp: ltclt.Application = res.body;
+        tl.debug(`GetApplication Call = ${JSON.stringify(res.body)}`);
 
         return curApp.Name;
     }
 
     private async GetModifiedModuleVersion(osApplication: string): Promise<any> {
         const res: any = await this.lifetime.applicationsGet(osApplication, true, true);
+        tl.debug(`GetModifiedModuleVersion Call = ${JSON.stringify(res.body)}`);
 
         const newApp: ltclt.Application = res.body;
 
@@ -163,6 +165,7 @@ export class OsDeploy {
 
     private async GetLatestAppVersion(osApplication: string): Promise<string> {
         const res: any = await this.lifetime.applicationsVersionsList(osApplication, this.MAXAPPVERSIONTORETURN);
+        tl.debug(`GetLatestAppVersion Call = ${JSON.stringify(res.body)}`);
 
         const appVersionList: Array<ltclt.ApplicationVersion> = res.body;
         // OS App Versions are returned ordered incorrectly. Does not follow semantic version.
@@ -173,6 +176,7 @@ export class OsDeploy {
 
     private async GetAppVersionAndKey(osApplication: string, osAutomaticVersioning: boolean, osAppVersion: string): Promise<any> {
         const res: any = await this.lifetime.applicationsVersionsList(osApplication, this.MAXAPPVERSIONTORETURN);
+        tl.debug(`GetAppVersionAndKey Call = ${JSON.stringify(res.body)}`);
 
         const appVersionList: Array<ltclt.ApplicationVersion> = res.body;
         const osApplicationName: string = res.body;
@@ -207,6 +211,7 @@ export class OsDeploy {
 
         //Base Environment where to TAG version
         const res = await this.lifetime.environmentsApplicationsVersionsCreate(osEnvSource, osApplication, newAppVersion);
+        tl.debug(`CreateApplicationsVersion Call = ${JSON.stringify(res.body)}`);
 
         const newAppVersionKey: string = res.body.ApplicationVersionKey;
         util.Log(`Created new Outsystem Application Version: ${newAppVersionKey}`);
@@ -234,6 +239,7 @@ export class OsDeploy {
         //New Deployment Plan
         const res = await this.lifetime.deploymentsCreate(deployPlan);
         newDeployPlanKey = res.body;
+        tl.debug(`CreateDeployPlan Call = ${JSON.stringify(res.body)}`);
         util.Log(`Created Outsystems Deployment Plan: ${newDeployPlanKey}`);
 
         return newDeployPlanKey;
@@ -242,6 +248,7 @@ export class OsDeploy {
     private async ExecuteDeployPan(deployPlan: string) {
 
         const res = await this.lifetime.deploymentsExecuteCommand(deployPlan, util.osDeployPlanCommands.Start);
+        tl.debug(`ExecuteDeployPan Call = ${JSON.stringify(res.body)}`);
 
         const deployCommandMessage: string = res.body.Errors[0];
         const deployStatusCode = res.body.StatusCode;
