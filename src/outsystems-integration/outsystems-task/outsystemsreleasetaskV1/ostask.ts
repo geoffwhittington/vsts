@@ -198,13 +198,22 @@ export class OsDeploy {
     private async ExecuteDeployPan(deployPlan: string) {
 
         const res = await this.lifetime.deploymentsExecuteCommand(deployPlan, util.osDeployPlanCommands.Start);
+        tl.debug(`ExecuteDeployPan Call = ${JSON.stringify(res.body)}`);
 
         const deployCommandMessage: string = res.body.Errors[0];
         const deployStatusCode = res.body.StatusCode;
-
         tl.debug(`deployCommandMessage = ${deployCommandMessage}`);
 
-        //return this.MonitorProgress(deployPlan);
+        // Status Codes
+        // 202 Command '<Command>' executed successfully for deployment '<DeploymentKey>' .
+        // 400 Command '<Command>' can not be executed for deployment '<DeploymentKey>'.
+        // 403 User doesn't have permissions to access the deployment with key '<DeploymentKey>'.
+        // 404 Deployment with key '<DeploymentKey>' not found, or command not found.
+        if (deployStatusCode >= 400) {
+            const message = tl.loc('OSFailureDeployPlanExecution', deployCommandMessage);
+            //tl.setResult(tl.TaskResult.Failed, message);
+            throw new Error(message);
+        }
     }
 
     private MonitorProgress(deployPlan: string) {

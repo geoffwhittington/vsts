@@ -1123,7 +1123,7 @@ export class V1Api {
                 if (error) {
                     reject(error);
                 } else {
-                    if (response.statusCode >= 200 && response.statusCode <= 299) {
+                    if (response.statusCode >= 200 && response.statusCode <= 405) {
                         resolve({ response: response, body: body });
                     } else {
                         reject({ response: response, body: body });
