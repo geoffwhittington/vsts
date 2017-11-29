@@ -44,8 +44,5 @@
     "sync-request": "3.0.1",
     "validator": "3.33.0",
     "node-uuid": "1.4.6"
-  },
-  "dependencies": {
-    "serialize-error": "^2.1.0"
   }
 }
