@@ -2,6 +2,7 @@ import * as tl from 'vsts-task-lib/task';
 import * as path from 'path';
 import * as url from 'url';
 import * as AsyncPolling from 'async-polling';
+import * as serializeError from 'serialize-error';
 
 // node js modules
 import * as ltclt from './oslifetime.sdk';
@@ -133,7 +134,7 @@ export class OsDeploy {
                 taskMessage = ` ${err.message}`;
             }
 
-            tl.debug(JSON.stringify(err));
+            tl.debug(JSON.stringify(serializeError(err)));
             //let message = tl.loc('OSAppVersionAlreadyExists',somthing);
             //tl.error(taskMessage);
             tl.setResult(tl.TaskResult.Failed, taskMessage);
