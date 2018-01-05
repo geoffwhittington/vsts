@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as url from 'url';
 import * as AsyncPolling from 'async-polling';
 import * as serializeError from 'serialize-error';
+import * as stringifyObject from 'stringify-object';
 
 // node js modules
 import * as ltclt from './oslifetime.sdk';
@@ -78,7 +79,7 @@ export class OsDeploy {
             }
 
             const newDeployPlanKey: string = await this.CreateDeployPlan([this.appVersionToDeployId], this.taskOptions.osNotes, this.taskOptions.osSource, this.taskOptions.osTarget);
-            await this.ExecuteDeployPan(newDeployPlanKey);
+            await this.ExecuteDeployPlan(newDeployPlanKey);
             const stat = await this.MonitorProgress(newDeployPlanKey);
 
         } catch (err) {
@@ -101,12 +102,14 @@ export class OsDeploy {
     private async GetApplication(osApplication: string): Promise<string> {
         const res: any = await this.lifetime.applicationsGet(osApplication, true, true);
         const curApp: ltclt.Application = res.body;
+        tl.debug(`GetApplication Call = ${util.getLogOSRestAPIResponse(res)}`);
 
         return curApp.Name;
     }
 
     private async GetModifiedModuleVersion(osApplication: string): Promise<any> {
         const res: any = await this.lifetime.applicationsGet(osApplication, true, true);
+        tl.debug(`GetModifiedModuleVersion Call = ${util.getLogOSRestAPIResponse(res)}`);
 
         const newApp: ltclt.Application = res.body;
 
@@ -121,6 +124,7 @@ export class OsDeploy {
 
     private async GetLatestAppVersion(osApplication: string): Promise<string> {
         const res: any = await this.lifetime.applicationsVersionsList(osApplication, this.MAXAPPVERSIONTORETURN);
+        tl.debug(`GetLatestAppVersion Call = ${util.getLogOSRestAPIResponse(res)}`);
 
         const appVersionList: Array<ltclt.ApplicationVersion> = res.body;
         // OS App Versions are returned ordered incorrectly. Does not follow semantic version.
@@ -131,6 +135,7 @@ export class OsDeploy {
 
     private async GetAppVersionAndKey(osApplication: string, osAutomaticVersioning: boolean, osAppVersion: string): Promise<any> {
         const res: any = await this.lifetime.applicationsVersionsList(osApplication, this.MAXAPPVERSIONTORETURN);
+        tl.debug(`GetAppVersionAndKey Call = ${util.getLogOSRestAPIResponse(res)}`);
 
         const appVersionList: Array<ltclt.ApplicationVersion> = res.body;
         const osApplicationName: string = res.body;
@@ -160,10 +165,11 @@ export class OsDeploy {
         newAppVersion.moduleVersionKeys = moduleVersions; //[newModuleVersionKey];
 
         this.appVersionToDeploy = newAppVersion.version = osAutomaticVersioning ? util.GetNextSemVersion(osAppLastVersion) : osAppLastVersion;
-        tl.debug(`New App Version :` + JSON.stringify(newAppVersion));
+        tl.debug(`New App Version :` + util.getLogOSRestAPIResponse(newAppVersion));
 
         //Base Environment where to TAG version
         const res = await this.lifetime.environmentsApplicationsVersionsCreate(osEnvSource, osApplication, newAppVersion);
+        tl.debug(`CreateApplicationsVersion Call = ${util.getLogOSRestAPIResponse(res)}`);
 
         const newAppVersionKey: string = res.body.ApplicationVersionKey;
         util.Log(`Created new Outsystem Application Version: ${newAppVersionKey}`);
@@ -175,7 +181,7 @@ export class OsDeploy {
         let newDeployPlanKey;
 
         deployPlan.applicationVersionKeys = appVersionKeys;
-        tl.debug(`ApplicationVersionKeys= ${deployPlan.applicationVersionKeys}`);
+        tl.debug(`ApplicationVersionKeys= ${util.getLogOSRestAPIResponse(deployPlan.applicationVersionKeys)}`);
 
         if (osNotes == null) {
             const deployPlanTimestamp = new Date();
@@ -186,24 +192,39 @@ export class OsDeploy {
 
         deployPlan.sourceEnvironmentKey = osEnvSource;
         deployPlan.targetEnvironmentKey = osEnvTarget;
-        tl.debug(`Deployment Plan :` + JSON.stringify(deployPlan));
+        tl.debug(`Deployment Plan :` + util.getLogOSRestAPIResponse(deployPlan));
 
         //New Deployment Plan
         const res = await this.lifetime.deploymentsCreate(deployPlan);
         newDeployPlanKey = res.body;
+        tl.debug(`CreateDeployPlan Call = ${util.getLogOSRestAPIResponse(res)}`);
         util.Log(`Created Outsystems Deployment Plan: ${newDeployPlanKey}`);
 
         return newDeployPlanKey;
     }
 
-    private async ExecuteDeployPan(deployPlan: string) {
+    private async ExecuteDeployPlan(deployPlan: string) {
 
         const res = await this.lifetime.deploymentsExecuteCommand(deployPlan, util.osDeployPlanCommands.Start);
-        tl.debug(`ExecuteDeployPan Call = ${JSON.stringify(res.body)}`);
+        const executeDeployPlanResponse: string = util.getLogOSRestAPIResponse(res);
+        if (executeDeployPlanResponse) {
+            tl.debug(`ExecuteDeployPlan Call = ${executeDeployPlanResponse}`);
+        } else {
+            const experr: string = stringifyObject(res.body);
+            tl.debug(`ExecuteDeployPlan String Call = ${experr}`);
+        }
 
-        const deployCommandMessage: string = res.body.Errors[0];
-        const deployStatusCode = res.body.StatusCode;
-        tl.debug(`deployCommandMessage = ${deployCommandMessage}`);
+        let deployStatusCode: number = 0;
+        let deployCommandMessage: string = 'deployCommandMessage not collected yet';
+        if (res && res.body) {
+            deployStatusCode = res.body.StatusCode;
+            tl.debug(`deployStatusCode = ${deployStatusCode}`);
+
+            if (res.body.Errors) {
+                deployCommandMessage = res.body.Errors[0];
+                tl.debug(`deployCommandMessage = ${deployCommandMessage}`);
+            }
+        }
 
         // Status Codes
         // 202 Command '<Command>' executed successfully for deployment '<DeploymentKey>' .

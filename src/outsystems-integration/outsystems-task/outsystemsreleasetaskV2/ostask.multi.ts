@@ -124,7 +124,7 @@ export class OsDeploy {
             }
 
             const newDeployPlanKey: string = await this.CreateDeployPlan(this.appVersionsToDeployIds, this.taskOptions.osNotes, this.taskOptions.osSource, this.taskOptions.osTarget);
-            await this.ExecuteDeployPan(newDeployPlanKey);
+            await this.ExecuteDeployPlan(newDeployPlanKey);
             const stat = await this.MonitorProgress(newDeployPlanKey);
 
         } catch (err) {
@@ -242,7 +242,7 @@ export class OsDeploy {
         return newDeployPlanKey;
     }
 
-    private async ExecuteDeployPan(deployPlan: string) {
+    private async ExecuteDeployPlan(deployPlan: string) {
 
         const res = await this.lifetime.deploymentsExecuteCommand(deployPlan, util.osDeployPlanCommands.Start);
 

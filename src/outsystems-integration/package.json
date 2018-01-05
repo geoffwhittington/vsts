@@ -43,6 +43,7 @@
     "shelljs": "^0.3.0",
     "sync-request": "3.0.1",
     "validator": "3.33.0",
-    "node-uuid": "1.4.6"
+    "node-uuid": "1.4.6",
+    "stringify-object": "^3.2.1"
   }
 }

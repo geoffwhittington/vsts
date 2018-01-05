@@ -22,6 +22,22 @@ export function Log(...args: Array<string>) {
     console.log.apply(console, fArgs);
 }
 
+export function getLogOSRestAPIResponse(resp: any): string {
+    let osResponse: string;
+    let headers: string;
+    let body: string;
+
+    if (resp.response && resp.response.headers && resp.body) {
+        headers = JSON.stringify(resp.response.headers);
+        body = JSON.stringify(resp.body);
+        osResponse = `${headers} ${body}`;
+    } else {
+        osResponse = JSON.stringify(resp);
+    }
+
+    return osResponse;
+}
+
 export function ConvertToBoolean(input: string): boolean | undefined {
     try {
         return JSON.parse(input);
