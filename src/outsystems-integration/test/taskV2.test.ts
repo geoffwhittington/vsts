@@ -7,8 +7,6 @@ import * as url from 'url';
 import * as ltclt from '../outsystems-task/outsystemsreleasetaskV2/oslifetime.sdk';
 import * as ostask from '../outsystems-task/outsystemsreleasetaskV2/ostask';
 import OsDeploy = ostask.OsDeploy;
-import * as osreport from '../outsystems-task/outsystemsreleasetaskV2/osreport';
-import OsReport = osreport.OsReport;
 
 import * as util from '../outsystems-task/outsystemsreleasetaskV2//util';
 
