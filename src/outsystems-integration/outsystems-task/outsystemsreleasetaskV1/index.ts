@@ -7,8 +7,6 @@ import * as url from 'url';
 import * as ltclt from './oslifetime.sdk';
 import * as ostask from './ostask';
 import OsDeploy = ostask.OsDeploy;
-import * as osreport from './osreport';
-import OsReport = osreport.OsReport;
 
 import * as util from './util';
 
